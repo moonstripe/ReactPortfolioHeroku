@@ -6,7 +6,7 @@ const routes = require('./routes');
 const path = require('path');
 
 const app = express();
-const publicPath = path.join(__dirname, '..', 'public');
+const publicPath = path.join(__dirname, '../client/', 'public');
 const PORT = process.env.PORT || 3001;
 
 if (process.env.NODE_ENV === 'production') {
@@ -18,12 +18,12 @@ app.use(express.urlencoded({extended: true}));
 app.use(express.json());
 app.use(routes);
 
-// app.get("*", (req, res) => {
-//     let url = path.join(__dirname, '../client/build', 'index.html');
-//     if (!url.startsWith('/app/')) // since we're on local windows
-//         url = url.substring(1);
-//     res.sendFile(url);
-// });
+app.get("*", (req, res) => {
+    let url = path.join(__dirname, '../client/build', 'index.html');
+    if (!url.startsWith('/app/')) // since we're on local windows
+        url = url.substring(1);
+    res.sendFile(url);
+});
 
 // Connect to the Mongo DB
 mongoose.connect(
