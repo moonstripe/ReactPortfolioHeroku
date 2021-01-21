@@ -53,13 +53,8 @@ const useStyles = makeStyles((theme) => ({
     moonButton: {
         marginRight: theme.spacing(2),
     },
-
-    offset: {
-        paddingLeft: 'calc(100vw/5)'
-    },
     drawerPaper: {
         paddingRight: theme.spacing(3),
-        paddingLeft: 'calc(100vw/5)',
     },
     drawerContainer: {
         overflow: 'auto',
