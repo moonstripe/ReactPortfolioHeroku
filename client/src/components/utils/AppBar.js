@@ -99,7 +99,7 @@ export default function MainAppBar() {
                 })}
             >
                 <CssBaseline/>
-                <Toolbar className={classes.offset}>
+                <Toolbar>
                     <IconButton
                         color="inherit"
                         aria-label="open drawer"
