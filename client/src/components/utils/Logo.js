@@ -18,12 +18,8 @@ const Logo = () => {
         <div
             style={{
                 display: 'inline-flex',
-                AlignItems: 'center'
             }}
         >
-            <IconButton edge="start" color="inherit" aria-label="menu" className={classes.moonButton}>
-                <NightsStayOutlined style={{fill: 'black'}}/>
-            </IconButton>
             <Typography variant="h4" color='textPrimary'>moonstripe</Typography>
         </div>
     )
