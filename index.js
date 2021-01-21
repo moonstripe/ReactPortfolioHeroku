@@ -12,17 +12,16 @@ const PORT = process.env.PORT || 3001;
 
 app.use(express.urlencoded({extended: true}));
 app.use(express.json());
+app.use(routes);
 if (process.env.NODE_ENV === 'production') {
     app.use(express.static('client/build'));
-}
 
+}
+app.use(express.static(publicPath));
 app.get('*', function (req, res) {
-    const index = path.join(__dirname, 'build', 'index.html');
+    const index = path.join(__dirname, 'client/build', 'index.html');
     res.sendFile(index);
 });
-
-app.use(express.static(publicPath));
-app.use(routes);
 
 // Connect to the Mongo DB
 mongoose.connect(
