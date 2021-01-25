@@ -1,4 +1,5 @@
 import React from 'react';
+import { miniRenderer } from "./Renderer";
 import { makeStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
 import CardActionArea from '@material-ui/core/CardActionArea';
@@ -9,26 +10,33 @@ import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 
 const useStyles = makeStyles({
-    root: {
+    coding: {
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'space-between',
-        height: '400px',
+        height: '65vh',
+    },
+    writing: {
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'space-between',
+        height: 'auto',
     },
     media: {
-        height: 140,
+        height: "140px",
     },
     actions: {
-        justifyContent: "bottom"
+        justifyContent: "bottom",
+        zIndex: 2
     }
 });
 
-export default function ContentCard( props ) {
+export const CodingContentCard = ( props ) => {
     const classes = useStyles();
 
     return (
-        <Card className={classes.root}>
-            <CardActionArea>
+        <Card className={classes.coding}>
+            <CardActionArea href={props.demourl} target={'_blank'}>
                 <CardMedia
                     className={classes.media}
                     image={props.imgsrc}
@@ -44,13 +52,32 @@ export default function ContentCard( props ) {
                 </CardContent>
             </CardActionArea>
             <CardActions className={classes.actions}>
-                <Button size="small" color="primary" href={props.demourl}>
+                <Button size="small" color="primary" href={props.demourl} target={'_blank'}>
                     Project Demo
                 </Button>
-                <Button size="small" color="primary" href={props.githuburl}>
+                <Button size="small" color="primary" href={props.githuburl} target={'_blank'}>
                     GitHub Repo
                 </Button>
             </CardActions>
+        </Card>
+    );
+}
+
+export const WritingContentCard = ( props ) => {
+    const classes = useStyles();
+
+    return (
+        <Card className={classes.writing}>
+            <CardActionArea href={props.demourl}>
+                <CardContent align={'left'}>
+                    <Typography className={classes.title} color="textSecondary" gutterBottom>
+                        {props.description}
+                    </Typography>
+                    <Typography variant="h5" component="h2">
+                        {props.title}
+                    </Typography>
+                </CardContent>
+            </CardActionArea>
         </Card>
     );
 }

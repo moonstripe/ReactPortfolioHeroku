@@ -1,6 +1,6 @@
 import React from 'react';
 import {Box, Grid, Paper, makeStyles, useTheme} from "@material-ui/core";
-import ContentCard from "../utils/contentCard";
+import { CodingContentCard } from "../utils/contentCard";
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -30,7 +30,7 @@ export const Coding = () => {
                     <Grid container xs={12}>
                         <Grid item xs={12} md={4}>
                             <Box className={classes.card}>
-                                <ContentCard
+                                <CodingContentCard
                                     title={'Koogle Books'}
                                     description={'One of the more interesting homeworks from the UC Berkeley Full-Stack Flex Bootcamp. Allows users to search for and save their favorite books.'}
                                     imgsrc='/projectImages/kooglebooks.png'
@@ -41,7 +41,7 @@ export const Coding = () => {
                         </Grid>
                         <Grid item xs={12} md={4}>
                             <Box className={classes.card}>
-                                <ContentCard
+                                <CodingContentCard
                                     className={classes.card}
                                     title={'Passify'}
                                     description={'For our second project in the UC Berkeley Full-Stack Flex Bootcamp, we tried our hand at a password manager. Next steps would be to build a chrome extension for easy access and usability.'}
@@ -53,7 +53,7 @@ export const Coding = () => {
                         </Grid>
                         <Grid item xs={12} md={4}>
                             <Box className={classes.card}>
-                                <ContentCard
+                                <CodingContentCard
                                     className={classes.card}
                                     title={'ScriptBot 1902'}
                                     description={'My first Facebook bot project from back in 2018. Written in Python, terribly inefficient, and currently idle, it used to post a basic screenplay scene. The content was generated using very simple Markov Chains.'}
@@ -65,7 +65,7 @@ export const Coding = () => {
                         </Grid>
                         <Grid item xs={12} md={4}>
                             <Box className={classes.card}>
-                                <ContentCard
+                                <CodingContentCard
                                     className={classes.card}
                                     title={'hmm'}
                                     description={'thonk'}
@@ -77,7 +77,7 @@ export const Coding = () => {
                         </Grid>
                         <Grid item xs={12} md={4}>
                             <Box className={classes.card}>
-                                <ContentCard
+                                <CodingContentCard
                                     className={classes.card}
                                     title={'hmm'}
                                     description={'thonk'}
@@ -89,7 +89,7 @@ export const Coding = () => {
                         </Grid>
                         <Grid item xs={12} md={4}>
                             <Box className={classes.card}>
-                                <ContentCard
+                                <CodingContentCard
                                     className={classes.card}
                                     title={'hmm'}
                                     description={'thonk'}

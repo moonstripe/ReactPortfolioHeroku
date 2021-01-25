@@ -78,6 +78,10 @@ export default function MainAppBar() {
     const theme = useTheme();
     const [open, setOpen] = React.useState(false);
 
+    const handleDrawer = () => {
+        open ? setOpen(false):setOpen(true);
+    };
+
     const handleDrawerOpen = () => {
         setOpen(true);
     };
@@ -98,7 +102,7 @@ export default function MainAppBar() {
                     <IconButton
                         color="inherit"
                         aria-label="open drawer"
-                        onClick={handleDrawerOpen}
+                        onClick={handleDrawer}
                         edge="start"
                         className={classes.moonButton}>
                         <NightsStayOutlined style={{fill: 'black'}}/>
@@ -117,12 +121,6 @@ export default function MainAppBar() {
             >
                 <Toolbar/>
                 <div className={classes.drawerContainer}>
-                    <div className={classes.drawerHeader}>
-                        <IconButton onClick={handleDrawerClose}>
-                            {theme.direction === 'ltr' ? <ChevronLeft /> : <ChevronRight />}
-                        </IconButton>
-                    </div>
-                    <Divider/>
                     <List>
                         <ListItem key="Coding">
                             <NavLink to='/coding' style={{textDecoration: 'none'}} component={Button}>
