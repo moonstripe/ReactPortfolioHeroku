@@ -4,7 +4,7 @@ import {makeStyles, useTheme} from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import {NavLink} from 'react-router-dom'
-import Logo from "./Logo";
+import Moonstripe from "./Logo";
 import {
     CodeOutlined,
     CreateOutlined,
@@ -52,6 +52,9 @@ const useStyles = makeStyles((theme) => ({
     },
     moonButton: {
         marginRight: theme.spacing(2),
+        borderRadius: 0,
+        paddingLeft: "30px",
+        marginLeft: "-30px"
     },
     drawerPaper: {
         paddingRight: theme.spacing(3),
@@ -71,6 +74,9 @@ const useStyles = makeStyles((theme) => ({
         ...theme.mixins.toolbar,
         justifyContent: 'flex-end',
     },
+    navlink: {
+        font: "PT Mono"
+    },
 }));
 
 export default function MainAppBar() {
@@ -79,7 +85,7 @@ export default function MainAppBar() {
     const [open, setOpen] = React.useState(false);
 
     const handleDrawer = () => {
-        open ? setOpen(false):setOpen(true);
+        open ? setOpen(false) : setOpen(true);
     };
 
     const handleDrawerOpen = () => {
@@ -105,9 +111,8 @@ export default function MainAppBar() {
                         onClick={handleDrawer}
                         edge="start"
                         className={classes.moonButton}>
-                        <NightsStayOutlined style={{fill: 'black'}}/>
+                        <Moonstripe/>
                     </IconButton>
-                    <Logo/>
                 </Toolbar>
             </AppBar>
             <Drawer
@@ -123,36 +128,36 @@ export default function MainAppBar() {
                 <div className={classes.drawerContainer}>
                     <List>
                         <ListItem key="Coding">
-                            <NavLink to='/coding' style={{textDecoration: 'none'}} component={Button}>
+                            <NavLink to='/coding' component={Button}>
                                 <ListItemIcon><CodeOutlined/></ListItemIcon>
-                                <ListItemText primary="Code"/>
+                                <ListItemText className={classes.navlink} primary="Code"/>
                             </NavLink>
                         </ListItem>
                         <ListItem key="Writing">
-                            <NavLink to='/writing' style={{textDecoration: 'none'}} component={Button}>
+                            <NavLink to='/writing' component={Button}>
                                 <ListItemIcon><CreateOutlined/></ListItemIcon>
-                                <ListItemText primary="Write" style={{textDecoration: 'none'}}/>
+                                <ListItemText className={classes.navlink} primary="Write"/>
                             </NavLink>
                         </ListItem>
                         <ListItem key="Learning">
-                            <NavLink to='/learning' style={{textDecoration: 'none'}} component={Button}>
+                            <NavLink to='/learning' component={Button}>
                                 <ListItemIcon><SearchOutlined/></ListItemIcon>
-                                <ListItemText primary="Learn"/>
+                                <ListItemText className={classes.navlink} primary="Learn"/>
                             </NavLink>
                         </ListItem>
                     </List>
                     <Divider/>
                     <List>
-                        <ListItem button key="About">
-                            <NavLink to='/about' style={{textDecoration: 'none'}} component={Button}>
+                        <ListItem button key="Home">
+                            <NavLink to='/' component={Button}>
                                 <ListItemIcon><PersonOutlineOutlined/></ListItemIcon>
-                                <ListItemText primary="About"/>
+                                <ListItemText className={classes.navlink} primary="About"/>
                             </NavLink>
                         </ListItem>
                         <ListItem button key="Contact">
-                            <NavLink to='/contact' style={{textDecoration: 'none'}} component={Button}>
+                            <NavLink to='/contact' component={Button}>
                                 <ListItemIcon><SendOutlined/></ListItemIcon>
-                                <ListItemText primary="Contact"/>
+                                <ListItemText className={classes.navlink} primary="Contact"/>
                             </NavLink>
                         </ListItem>
                     </List>

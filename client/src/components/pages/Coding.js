@@ -1,5 +1,5 @@
 import React from 'react';
-import {Box, Grid, Paper, makeStyles, useTheme} from "@material-ui/core";
+import {Box, Grid, Paper, makeStyles, useTheme, Typography} from "@material-ui/core";
 import { CodingContentCard } from "../utils/contentCard";
 
 const useStyles = makeStyles((theme) => ({
@@ -21,11 +21,10 @@ export const Coding = () => {
         <Box className={classes.root}>
 
             <Grid container>
-                <Grid item xs={2}></Grid>
-                <Grid container xs={8}>
+                <Grid item xs={3}></Grid>
+                <Grid container xs={7}>
                     <Grid item xs={12}>
-                        <h1>Coding</h1>
-                        <p></p>
+                        <Typography variant="h4" gutterBottom>Coding</Typography>
                     </Grid>
                     <Grid container xs={12}>
                         <Grid item xs={12} md={4}>

@@ -6,12 +6,15 @@ import {Typography, Box, Grid, makeStyles} from "@material-ui/core";
 import Button from '@material-ui/core/Button';
 
 const useStyles = makeStyles((theme) => ({
-    root:{
-      display: 'flex'
+    root: {
+        display: 'flex',
     },
     field: {
-        width: '600px',
+        width: 'full',
     },
+    butt: {
+        marginTop: '15px'
+    }
 }))
 
 const Contact = (props) => {
@@ -52,56 +55,62 @@ const Contact = (props) => {
     const classes = useStyles();
 
     return (
-        <Box>
-            <Grid container>
-                <Grid item xs={12}>
-                    <h1>Contact</h1>
-                </Grid>
-                <Grid item xs={6}>
-                    <form noValidate autoComplete="off" className={classes.root}>
-                        <Grid container>
-                            <Grid item xs={12}>
-                                <Field
-                                    className={classes.field}
-                                    name='email'
-                                    label='email'
-                                    component={TextFieldInput}
-                                />
-                            </Grid>
-                            <Grid item xs={12}>
-                                <Field
-                                    className={classes.field}
-                                    name='name'
-                                    label='name'
-                                    component={TextFieldInput}
-                                />
-                            </Grid>
-                            <Grid item xs={12}>
-                                <Field
-                                    className={classes.field}
-                                    name='message'
-                                    label='message'
-                                    component={LongTextFieldInput}
-                                />
-                            </Grid>
-                            <Grid item xs={12}>
-                                <Button
-                                    onClick={handleSubmit(handleContact)}
-                                    variant="contained"
-                                    color="primary">
-                                    Sign in
-                                </Button>
-                            </Grid>
-                        </Grid>
-                    </form>
-                </Grid>
-                <Grid item xs={6}>
-                    <Typography variant='h6'>Leave your comments here:</Typography>
-                </Grid>
+        <Box className={classes.root}>
 
+            <Grid container>
+                <Grid item xs={3}></Grid>
+                <Grid container xs={7}>
+                    <Grid item xs={12}>
+                        <Typography variant="h4" gutterBottom>Contact</Typography>
+                    </Grid>
+                    <Grid item xs={6}>
+                        <Typography variant='body1'>Leave your comments here:</Typography>
+                        <form noValidate autoComplete="off" >
+                            <Grid container>
+                                <Grid item xs={12}>
+                                    <Field
+                                        className={classes.field}
+                                        name='email'
+                                        label='email'
+                                        component={TextFieldInput}
+                                    />
+                                </Grid>
+                                <Grid item xs={12}>
+                                    <Field
+                                        className={classes.field}
+                                        name='name'
+                                        label='name'
+                                        component={TextFieldInput}
+                                    />
+                                </Grid>
+                                <Grid item xs={12}>
+                                    <Field
+                                        className={classes.field}
+                                        name='message'
+                                        label='message'
+                                        component={LongTextFieldInput}
+                                    />
+                                </Grid>
+                                <Grid item xs={12}>
+                                    <Button
+                                        onClick={handleSubmit(handleContact)}
+                                        variant="contained"
+                                        color="primary"
+                                        className={classes.butt}
+                                    >
+                                        Send Contact
+                                    </Button>
+                                </Grid>
+                            </Grid>
+                        </form>
+                    </Grid>
+
+                </Grid>
+                <Grid item xs={2}></Grid>
             </Grid>
+
         </Box>
-    )
+)
 };
 
 

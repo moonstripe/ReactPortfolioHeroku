@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import {Box, Grid, makeStyles} from "@material-ui/core";
+import {Box, Grid, makeStyles, Typography} from "@material-ui/core";
 import {WritingContentCard} from "../utils/contentCard";
 import {Switch, Route, Link, useLocation} from "react-router-dom";
 import {WritingContentEndpoint} from "../utils/ContentEndpoint";
@@ -85,11 +85,11 @@ export const Writing = () => {
         <Box className={classes.root}>
 
             <Grid container>
-                <Grid item xs={2}></Grid>
-                <Grid container xs={8}>
+                <Grid item xs={3}></Grid>
+                <Grid container xs={7}>
                     <Grid item xs={12}>
                         <Link to='/writing' style={{color: 'inherit', textDecoration: 'inherit'}}>
-                            <h1>Writing</h1>
+                            <Typography variant="h4" gutterBottom>Writing</Typography>
                         </Link>
                     </Grid>
                     <Grid container xs={12}>

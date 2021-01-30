@@ -58,8 +58,6 @@ function App() {
             <div className={classes.root}>
                 <CssBaseline/>
                 <MainAppBar/>
-
-
             </div>
             <main className={clsx(classes.content, {
                 [classes.contentShift]: open,
@@ -75,7 +73,7 @@ function App() {
                     <Route path="/learning">
                         <Learning/>
                     </Route>
-                    <Route path="/about">
+                    <Route exact path="/">
                         <About/>
                     </Route>
                     <Route path="/contact">

@@ -31,6 +31,9 @@ const useStyles = makeStyles((theme) => ({
     drawer: {
         flexShrink: 0,
     },
+    navlink: {
+        font: "PT Mono"
+    },
 
 }));
 
@@ -49,36 +52,36 @@ const MainDrawer = () => {
             <div className={classes.drawerContainer}>
                 <List>
                     <ListItem key="Coding">
-                        <NavLink to='/coding' style={{textDecoration: 'none'}} component={Button}>
+                        <NavLink to='/coding' className={classes.navlink} component={Button}>
                             <ListItemIcon><CodeOutlined/></ListItemIcon>
-                            <ListItemText primary="Code"/>
+                            <ListItemText className={classes.navlink} primary="Code"/>
                         </NavLink>
                     </ListItem>
                     <ListItem key="Writing">
-                        <NavLink to='/writing' style={{textDecoration: 'none'}} component={Button}>
+                        <NavLink to='/writing' className={classes.navlink} component={Button}>
                             <ListItemIcon><CreateOutlined/></ListItemIcon>
-                            <ListItemText primary="Write" style={{textDecoration:'none'}}/>
+                            <ListItemText className={classes.navlink} primary="Write" style={{textDecoration:'none'}}/>
                         </NavLink>
                     </ListItem>
                     <ListItem key="Learning">
-                        <NavLink to='/learning' style={{textDecoration: 'none'}} component={Button}>
+                        <NavLink to='/learning' className={classes.navlink} component={Button}>
                             <ListItemIcon><SearchOutlined/></ListItemIcon>
-                            <ListItemText primary="Learn"/>
+                            <ListItemText className={classes.navlink} primary="Learn"/>
                         </NavLink>
                     </ListItem>
                 </List>
                 <Divider/>
                 <List>
-                    <ListItem button key="About">
-                        <NavLink to='/about' style={{textDecoration: 'none'}} component={Button}>
+                    <ListItem button key="Home">
+                        <NavLink to='/' className={classes.navlink} component={Button}>
                             <ListItemIcon><PersonOutlineOutlined/></ListItemIcon>
-                            <ListItemText primary="About"/>
+                            <ListItemText className={classes.navlink} primary="About"/>
                         </NavLink>
                     </ListItem>
                     <ListItem button key="Contact">
-                        <NavLink to='/contact' style={{textDecoration: 'none'}} component={Button}>
+                        <NavLink to='/contact' className={classes.navlink} component={Button}>
                             <ListItemIcon><SendOutlined/></ListItemIcon>
-                            <ListItemText primary="Contact"/>
+                            <ListItemText className={classes.navlink} primary="Contact"/>
                         </NavLink>
                     </ListItem>
                 </List>
