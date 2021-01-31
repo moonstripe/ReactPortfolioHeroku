@@ -210,7 +210,7 @@ export const About = () => {
                         <Grid md={12} style={{height: '35vh'}}/>
 
                         {
-                            scroll > 2
+                            scroll > 200
                                 ? <Grid md={12}>
                                     <Box>
                                         <Typography variant="h6" align='right' className={classes.card} style={{
